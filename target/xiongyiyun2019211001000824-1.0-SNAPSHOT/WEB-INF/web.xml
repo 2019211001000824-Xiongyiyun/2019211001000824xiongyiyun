@@ -3,21 +3,54 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+<!--    <servlet>-->
+<!--        <servlet-name>LifeCycleServlet</servlet-name>-->
+<!--        <servlet-class>xiongyiyun.week3.demo.LifeCycleServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet>-->
+<!--        <servlet-name>RegisterServlet</servlet-name>-->
+<!--        <servlet-class>xiongyiyun.week3.demo.RegisterServlet</servlet-class>-->
+<!--    </servlet>-->
     <servlet>
-        <servlet-name>LifeCycleServlet</servlet-name>
-        <servlet-class>xiongyiyun.week3.demo.LifeCycleServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>xiongyiyun.week3.demo.RegisterServlet</servlet-class>
+        <servlet-name>JDBCDemoServlet</servlet-name>
+        <servlet-class>com.xiongyiyun.week4.demo.JDBCDemoServlet</servlet-class>
+<!--        // String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";-->
+<!--        // String url="jdbc:sqlserver://localhost:databaseName=userdb";-->
+<!--        // String username="sa";-->
+<!--        // String password="xiong123123";-->
+        <init-param>
+            <param-name>driver</param-name>
+            <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
+        </init-param>
+        <init-param>
+            <param-name>url</param-name>
+            <param-value>jdbc:sqlserver://localhost:databaseName=userdb</param-value>
+        </init-param>
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>sa</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>xiong123123</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
-        <servlet-name>LifeCycleServlet</servlet-name>
-        <url-pattern>/life</url-pattern>
-        <!--/life == LifeCycleServlet ==  xiongyiyun.week3.demo.LifeCycleServlet-->
+        <servlet-name>JDBCDemoServlet</servlet-name>
+        <url-pattern>/jdbc</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>RegisterServlet</servlet-name>
-        <url-pattern>/register</url-pattern>
-    </servlet-mapping>
+<!--    <servlet>-->
+<!--        <servlet-name>JDBCDemoServlet</servlet-name>-->
+<!--        <servlet-class>com.xiongyiyun.week4.demo.JDBCDemoServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>LifeCycleServlet</servlet-name>-->
+<!--        <url-pattern>/life</url-pattern>-->
+<!--        &lt;!&ndash;/life == LifeCycleServlet ==  xiongyiyun.week3.demo.LifeCycleServlet&ndash;&gt;-->
+<!--    </servlet-mapping>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>RegisterServlet</servlet-name>-->
+<!--        <url-pattern>/register</url-pattern>-->
+<!--    </servlet-mapping>-->
 </web-app>
