@@ -1,4 +1,4 @@
-package xiongyiyun.week3.demo;
+package com.xiongyiyun.week3.demo;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;

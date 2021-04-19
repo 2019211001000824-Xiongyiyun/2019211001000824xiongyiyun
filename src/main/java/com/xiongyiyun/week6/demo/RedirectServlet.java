@@ -1,4 +1,4 @@
-package xiongyiyun.week6.demo;
+package com.xiongyiyun.week6.demo;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
