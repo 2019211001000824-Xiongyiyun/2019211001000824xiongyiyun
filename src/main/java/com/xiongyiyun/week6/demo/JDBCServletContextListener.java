@@ -1,12 +1,10 @@
 package com.xiongyiyun.week6.demo;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
 @WebListener
 public class JDBCServletContextListener implements ServletContextListener{
@@ -36,4 +34,3 @@ public class JDBCServletContextListener implements ServletContextListener{
     }
 
 }
-
