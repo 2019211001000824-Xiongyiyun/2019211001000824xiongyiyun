@@ -7,10 +7,29 @@
         out.println(request.getAttribute("massage"));
     }
 %>
-<form method="post" action="/login">
-    username:<input type="text" id="username"> <br>
-    password:<input type="password" id="password"><br>
-    <input type="submit" value="login">
+<%
+    Cookie[] allCookies = request.getCookies();
+    String username="",password="",rememberMevale="";
+    if (allCookies!=null){
+        for (Cookie c:allCookies){
+            if (c.getName().equals("cUsername")){
+                username=c.getValue();
+            }
+            if (c.getName().equals("cpassword")){
+                password=c.getValue();
+            }
+            if (c.getName().equals("cRememberMe")){
+                rememberMevale=c.getValue();
+            }
+
+        }
+    }
+%>
+<form method="post" action="login">
+    username:<input type="text" id="username" name="username" value="<%=username%>"> <br>
+    password:<input type="password" id="password" name="password" value="<%=password%>"><br>
+    <input type="checkbox" name="rememberMe" value="1" <%=rememberMevale.equals("1")?"checked":"" %>checked/>RememberMe<br/>
+    <input type="submit" value="Submit">
 </form>
 
 <%@include file="footer.jsp"%>

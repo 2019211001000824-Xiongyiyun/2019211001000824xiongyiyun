@@ -84,7 +84,7 @@ doPost(request,response);
             //url not change
             //no more here
             //System.out.println("i am in RegisterServlet-->doPost()--> after forward()");// see this line
-        response.sendRedirect("login,jsp");
+        response.sendRedirect("login.jsp");
         }catch (SQLException e){
             e.printStackTrace();
         }
