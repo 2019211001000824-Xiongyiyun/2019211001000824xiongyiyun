@@ -13,6 +13,13 @@
         <element id="directory" name="classes">
           <element id="module-output" name="2019211001000824xiongyiyun" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.microsoft.sqlserver:mssql-jdbc:9.2.1.jre15" />
+          <element id="library" level="project" name="Maven: org.apache.ivy:ivy:2.5.0" />
+          <element id="library" level="project" name="Maven: javax.servlet:jsp-api:2.0" />
+          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.4" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/2019211001000824xiongyiyun-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
