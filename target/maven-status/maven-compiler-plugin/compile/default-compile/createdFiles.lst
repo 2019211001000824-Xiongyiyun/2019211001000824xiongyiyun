@@ -1,8 +1,11 @@
 com\xiongyiyun\controller\HomeServlet.class
 com\xiongyiyun\week4\demo\JDBCDemoServlet.class
 com\xiongyiyun\model\User.class
+com\lab1\Dog.class
+com\xiongyiyun\model\Item.class
 com\xiongyiyun\week3\demo\LifeCycleServlet.class
 com\xiongyiyun\model\Product.class
+com\lab1\Person.class
 com\xiongyiyun\controller\ProductDetailServlet.class
 com\xiongyiyun\week5\LoginServlet.class
 com\xiongyiyun\dao\UserDao.class
@@ -11,8 +14,10 @@ com\xiongyiyun\controller\ShopServlet.class
 com\example\xiongyiyun2019211001000824\HelloServlet.class
 com\xiongyiyun\dao\IProductDao.class
 com\xiongyiyun\week3\demo\RegisterServlet.class
+com\xiongyiyun\controller\CartServlet.class
 com\xiongyiyun\controller\GetimgServlet.class
 com\xiongyiyun\model\Category.class
+com\xiongyiyun\controller\UserListServlet.class
 com\xiongyiyun\week6\demo\JDBCServletContextListener.class
 com\xiongyiyun\controller\ProductListServlet.class
 com\xiongyiyun\dao\ProductDao.class
