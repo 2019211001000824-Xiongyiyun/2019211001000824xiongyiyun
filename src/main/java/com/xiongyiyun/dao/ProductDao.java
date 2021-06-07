@@ -4,12 +4,9 @@ import com.xiongyiyun.model.Product;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.List;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProductDao implements  IProductDao{
     @Override

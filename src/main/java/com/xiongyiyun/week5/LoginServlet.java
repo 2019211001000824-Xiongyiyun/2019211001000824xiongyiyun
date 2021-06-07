@@ -1,6 +1,6 @@
 package com.xiongyiyun.week5;
 
-import com.xiongyiyun.dao.UserDao;
+import com.xiongyiyun.dao.Userdao;
 import com.xiongyiyun.model.User;
 
 import javax.servlet.*;
@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username=req.getParameter("username");
         String password=req.getParameter("password");
-        UserDao userDao=new UserDao();
+        Userdao userDao=new Userdao();
         try {
             User user=userDao.findByUsernamePassword(dbConn,username,password);
             if(user!=null) {

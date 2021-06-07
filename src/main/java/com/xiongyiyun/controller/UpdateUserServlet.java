@@ -1,6 +1,6 @@
 package com.xiongyiyun.controller;
 
-import com.xiongyiyun.dao.UserDao;
+import com.xiongyiyun.dao.Userdao;
 import com.xiongyiyun.model.User;
 
 import javax.servlet.ServletException;
@@ -35,7 +35,7 @@ public class UpdateUserServlet extends HttpServlet {
         }
         String id=request.getParameter("id");
         User u=new User(Integer.valueOf(id),username,password,mail,sex,birth);
-        UserDao userDao=new UserDao();
+        Userdao userDao=new Userdao();
         try {
             userDao.updateUser((Connection)getServletContext().getAttribute("con"),u);
         } catch (SQLException e) {
