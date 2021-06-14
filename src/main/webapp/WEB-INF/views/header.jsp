@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <%@ page import="com.xiongyiyun.model.User" %>
 <%
 	String path = request.getContextPath();

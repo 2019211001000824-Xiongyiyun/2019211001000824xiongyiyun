@@ -1,36 +1,39 @@
 package com.xiongyiyun.week6.demo;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 @WebListener
-public class JDBCServletContextListener implements ServletContextListener{
-    public Connection dbConn;
+public class JDBCServletContextListener implements ServletContextListener {
+    @Override
     public void contextInitialized(ServletContextEvent sce) {
-      /* This method is called when the servlet context is
-         initialized(when the Web application is deployed).
-         You can initialize servlet context related data here.
-      */
-        System.out.println("inti...");
-        try {
-            Class.forName(sce.getServletContext().getInitParameter("driver"));
-            dbConn= DriverManager.getConnection(sce.getServletContext().getInitParameter("url"),sce.getServletContext().getInitParameter("Username"),sce.getServletContext().getInitParameter("Password"));
-            System.out.println(dbConn);
-        } catch (Exception e) {
-            System.out.println(e);
+        ServletContext context=sce.getServletContext();
+        String driver=context.getInitParameter("driver");
+        String url=context.getInitParameter("url");
+        String username=context.getInitParameter("username");
+        String password=context.getInitParameter("password");
+
+        try{
+            Class.forName(driver);
+            Connection con = DriverManager.getConnection(url, username, password);
+            System.out.println("i am in contextInitialized()-- >"+con);
+            //System.out.println("init()--> "+ con );
+            context.setAttribute("con",con);
+        } catch (ClassNotFoundException | SQLException e){
+            e.printStackTrace();
         }
-        sce.getServletContext().setAttribute("con",dbConn);
+
+
     }
 
+    @Override
     public void contextDestroyed(ServletContextEvent sce) {
-      /* This method is invoked when the Servlet Context
-         (the Web application) is undeployed or
-         Application Server shuts down.
-      */
+        System.out.println("i am in contextDestroyed()");
         sce.getServletContext().removeAttribute("con");
     }
-
 }
